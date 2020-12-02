@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>L'EPIDE: l'école de la deuxième chance</title>
+		<meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
+                <link rel="stylesheet" media="screen" type="text/css" title="Design" href="or.css" />
+		<style type="text/css"><!--
+			/*********************************/
+			/* Menu horizontal (items flottants) */
+			/*********************************/
+		}
+		/* on cache le slider */
+		.sl_i:target ~ #slideshow .slider									{ visibility: hidden }
+		/* on planque la 1ère pastille (cf. bonux suivant) */
+		.sl_i:target ~ #slideshow .dots_commands li:first-child a:after		{ display:none; }
+		/* pour afficher la 2ème pastille (cf. bonux suivant) */
+		.sl_i:target ~ #slideshow .dots_commands li:first-child a:before	{ display:block; }
+
+		/* lorsque on cible le premier slider */
+		/* on cache tous les "précédent" et "suivant" */
+		#sl_i1:target ~ #slideshow .commands								{ display: none; }
+		/* on affiche seulement deux flèches */
+		#sl_i1:target ~ #slideshow .commands1								{ display: block; }
+		/* correspond au décalage des images */
+		#sl_i1:target ~ #slideshow .c_slider								{ background-position: 0 0, 640px 0, 1280px 0, 1920px 0; }
+		/* on place la pastille tout à gauche */
+		#sl_i1:target ~ #slideshow .dots_commands li:first-child a:before	{ left:0; }
+
+		/* même procédé lorsqu'on cible le second slide */
+		#sl_i2:target ~ #slideshow .commands								{ display: none; }
+		#sl_i2:target ~ #slideshow .commands2								{ display: block; }
+		#sl_i2:target ~ #slideshow .c_slider								{ background-position: -640px 0, 0 0, 640px 0, 1280px 0; }
+		#sl_i2:target ~ #slideshow .dots_commands li:first-child a:before	{ left:18px; }
+
+		/* puis le 3ème */
+		#sl_i3:target ~ #slideshow .commands								{ display: none; }
+		#sl_i3:target ~ #slideshow .commands3								{ display: block; }
+		#sl_i3:target ~ #slideshow .c_slider								{ background-position: -1280px 0, -640px 0, 0 0, 640px 0; }
+		#sl_i3:target ~ #slideshow .dots_commands li:first-child a:before	{ left:36px; }
+
+		/* et enfin le 4ème */
+		#sl_i4:target ~ #slideshow .commands								{ display: none; }
+		#sl_i4:target ~ #slideshow .commands4								{ display: block; }
+		#sl_i4:target ~ #slideshow .c_slider								{ background-position: -1920px 0, -1280px 0, -640px 0, 0 0; }
+		#sl_i4:target ~ #slideshow .dots_commands li:first-child a:before	{ left:54px; }
+		.dots_commands  {
+			padding:0;
+			margin:32px 0 0;
+			text-align: center;
+		}
+		.dots_commands li {
+			display: inline;
+			padding:0; margin:0;
+		}
+		.dots_commands a {
+			position: relative;
+			display: inline-block;
+			height:8px; width: 8px;
+			margin: 0 5px;
+			text-indent: -9999px;
+			background: #fff;
+
+			border-radius: 50%;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.55) inset;
+
+		}
+		/* quelques styles au focus */
+		.dots_commands a:focus {
+			outline: none;
+			background: orange;
+		}
+		.dots_commands li:first-child a { z-index: 25; }
+		/* on style after et before, on utilisera les deux */
+		.dots_commands li:first-child a:after,
+		.dots_commands li:first-child a:before {
+			position: absolute;
+			top: 0; left: 0;
+			content: " ";
+			width: 8px; height: 8px;
+			background: #bd9b83;
+			z-index:20;
+
+			border-radius: 50%;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.55) inset;
+		}
+		/* on anime "after" */
+		.dots_commands li:first-child a:after {
+			animation: dotser 32s infinite;
+		}
+		/* on cache "before", on l'utilise uniquement au clic (cf. bonux précédent) */
+		.dots_commands li:first-child a:before { display:none; }
+
+		/* c'est parti pour l'animation ! */
+		@keyframes dotser {
+			0%, 100% 	{ opacity: 1; left: 0; 		}
+
+			20%			{ opacity: 1; left: 0;		}
+			22%			{ opacity: 0; left: 0;		}
+			23%			{ opacity: 0; left: 18px;	}
+			25%			{ opacity: 1; left: 18px;	}
+
+			45%			{ opacity: 1; left: 18px;	}
+			47%			{ opacity: 0; left: 18px;	}
+			48%			{ opacity: 0; left: 36px;	}
+			50%			{ opacity: 1; left: 36px;	}
+
+			70%			{ opacity: 1; left: 36px;	}
+			72%			{ opacity: 0; left: 36px;	}
+			73%			{ opacity: 0; left: 54px;	}
+			75%			{ opacity: 1; left: 54px;	}
+
+			95%			{ opacity: 1; left: 54px;	}
+			97%			{ opacity: 0; left: 54px;	}
+			98%			{ opacity: 0; left: 0;	}
+		}
+					#nav {
+						list-style: none ;
+						margin: 0px ;
+						padding: 0px ;
+						overflow: hidden ;	/* Création du contexte de formatage */
+						}
+					#nav li {
+						float: left ;
+						width: 150px ;
+						color: #00BFFF ;
+						background: #00BFFF ;
+						}
+					#nav li a {
+						display: block ;
+						background: #00BFFF ;
+						color: #FFF ;
+						font: 1em "Trebuchet MS",Arial,sans-serif ;
+						line-height: 1em ;
+						text-align: center ;
+						text-decoration: none ;
+						}
+					#nav li a:hover, #nav li a:focus, #nav li a:active { ;
+						text-decoration: underline ;
+						}
+						}
+					--></style>
+					<!--[if lt IE 7]>
+					<style type="text/css">
+					#nav {						/* Contexte de formatage pour IE6 */
+						overflow: visible ;
+						height: 1% ;
+						}
+					</style>
+					<![endif]-->
+
+	</head>
+	<body style="background-color:#00BFFF">
+	<table style="width:100%; text-align:right;background-color:#00BFFF">
+    <tr>
+    <th><a title="Facebook" target="_blank" href="https://www.facebook.com/epideofficiel/?fref=ts">
+<img alt="Facebook" src="https://mail.google.com/mail/u/0?ui=2&ik=10f2f8cf8e&attid=0.2&permmsgid=msg-a:r-4930250357558778628&th=16fe7e076608aa16&view=att&disp=safe&realattid=16fe7e026565b16b22" width="26" height="26" />
+</a>
+&nbsp;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+<a title="Twitter" target="_blank" href="https://twitter.com/EPIDE_Officiel">
+<img alt="Twitter" src="https://mail.google.com/mail/u/0?ui=2&ik=10f2f8cf8e&attid=0.3&permmsgid=msg-a:r-4930250357558778628&th=16fe7e076608aa16&view=att&disp=safe&realattid=16fe7e02656692e333" width="26" height="26" />
+</a>
+&nbsp;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+<a title="YouTUBE" target="_blank" href="https://www.youtube.com/channel/UC6BMhtQBZ_Ao7X9NYn3qPFg">
+<img alt="YouTUBE" src="https://mail.google.com/mail/u/0?ui=2&ik=10f2f8cf8e&attid=0.5&permmsgid=msg-a:r-4930250357558778628&th=16fe7e076608aa16&view=att&disp=safe&realattid=16fe7e02656855d355" width="26" height="26" />
+</a>
+&nbsp;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+<a title="LinkedIN" target="_blank" href="https://fr.linkedin.com/">
+<img alt="LinkedIN" src="https://mail.google.com/mail/u/0?ui=2&ik=10f2f8cf8e&attid=0.4&permmsgid=msg-a:r-4930250357558778628&th=16fe7e076608aa16&view=att&disp=safe&realattid=16fe7e026567745b44" width="26" height="26" />
+</a>
+&nbsp;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+<a title="Instagram" target="_blank" href="https://www.instagram.com/epide_officiel/?hl=fr">
+<img alt="Instagram" src="https://mail.google.com/mail/u/0?ui=2&ik=10f2f8cf8e&attid=0.6&permmsgid=msg-a:r-4930250357558778628&th=16fe7e076608aa16&view=att&disp=safe&realattid=16fe7e026579374b66" width="26" height="26" />
+</a>
+</th>
+</tr>
+</table>
+		<ul id="nav" style="widht:100%">
+			<li><figure id="nav">
+<a href="#" title="aller à la section 1"><img src="https://mail.google.com/mail/u/0?ui=2&ik=10f2f8cf8e&attid=0.1&permmsgid=msg-a:r-4930250357558778628&th=16fe7e076608aa16&view=att&disp=safe&realattid=16fe7e026564cff311" widht="16" height"16" alt="image en lien"></a>
+ </li>
+			<li><a href="#" title="aller à la section 2">Voyage</a></li>
+			<li><a href="#" title="aller à la section 3">Volontaire</a></li>
+			<li><a href="#" title="aller à la section 4">Lequipe</a></li>
+		</ul>
+<marquee id="id1"><span onmouseover="getElementById('id1').stop();" onmouseout="getElementById('id1').start();"><img title="section 3 à la baies de somme" src="baiedesomme.png" with="10%" height="10%" border="0" alt="section3 baie de somme" /><img title="sortie sportives" src="sorties.png" border="0" width="20%" height="50%" alt="sorties sportives" /><img title="A la decouverte de la caverne du dragons" src="caverne.png" border="0" width="30%" height="50%" alt="entré de la caverne du dragon" /><img title="Promenade de santé" src="baies.png" border="0" width="40%" height="50%" alt="baies de somme" /><img title="parc nautic de verberie" src="skinaut.png" border="0" width="40%" height="50%" alt="parck nautic" /></span></marquee>
+		<div style="margin: 10px 1px 0 1px"><img border="0" src="images/noir.gif" width="100%" height="1" <div style="margin: 10px 1px 0 1px"><img border="0" src="images/noir.gif" width="100%" height="1"></div>
+		<p class="bodytext"><img style="padding-left: 10px; float: center;"<dl><dt><d>Des sortis sportives et assosiatifs</d></dt><dd>Des activitées sont proposée la semaine sur la ville de Margny-lès-Compiègnes( randonné, vélo, piscine...)</dd> <dd>des journées avec des association tel que WIN4OUR, on peut meme vous proposé d'aider une association sportive comme le park nautic de verbebrie  </dd> <dt><d>Des sortis culturelles</d></dt> <dd>Decouvrir des monuments historiques (la caverne du dragon) ou des journées d'excursion (la baie de somme) </dd> <dd>Des voyages peuvent aussi êtres proposé vous pouvez aussi en monté le proget !</dd></dl>
